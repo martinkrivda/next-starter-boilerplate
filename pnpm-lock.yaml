@@ -104,6 +104,9 @@ importers:
       next:
         specifier: 16.0.8
         version: 16.0.8(@babel/core@7.28.5)(react-dom@19.2.1(react@19.2.1))(react@19.2.1)
+      next-intl:
+        specifier: 4.5.8
+        version: 4.5.8(next@16.0.8(@babel/core@7.28.5)(react-dom@19.2.1(react@19.2.1))(react@19.2.1))(react@19.2.1)(typescript@5.9.3)
       next-themes:
         specifier: 0.4.6
         version: 0.4.6(react-dom@19.2.1(react@19.2.1))(react@19.2.1)
@@ -162,9 +165,6 @@ importers:
       husky:
         specifier: 9.1.7
         version: 9.1.7
-      next-intl:
-        specifier: 4.5.8
-        version: 4.5.8(next@16.0.8(@babel/core@7.28.5)(react-dom@19.2.1(react@19.2.1))(react@19.2.1))(react@19.2.1)(typescript@5.9.3)
       prettier:
         specifier: ^3.7.4
         version: 3.7.4
