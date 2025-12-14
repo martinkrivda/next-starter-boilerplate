@@ -1,6 +1,6 @@
 import createMiddleware from "next-intl/middleware";
 
-import { defaultLocale, locales, localePrefix } from "./i18n/routing";
+import { defaultLocale, locales, localePrefix } from "./src/i18n/routing";
 
 const intlProxy = createMiddleware({
   defaultLocale,
