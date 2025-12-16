@@ -1,10 +1,10 @@
 import type { ReactNode } from "react";
 import { notFound } from "next/navigation";
-import { NextIntlClientProvider } from "next-intl";
 import { getMessages, setRequestLocale } from "next-intl/server";
 
 import { routing, type Locale } from "@/i18n/routing";
-import { LocaleProvider, ThemeProvider } from "@/providers";
+import { env } from "@/lib/env";
+import { AppProviders } from "@/providers";
 
 type LocaleLayoutProps = Readonly<{
   children: ReactNode;
@@ -24,12 +24,8 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
   const messages = await getMessages({ locale });
 
   return (
-    <LocaleProvider locale={locale}>
-      <ThemeProvider>
-        <NextIntlClientProvider locale={locale} messages={messages}>
-          {children}
-        </NextIntlClientProvider>
-      </ThemeProvider>
-    </LocaleProvider>
+    <AppProviders locale={locale} messages={messages} timeZone={env.TIME_ZONE}>
+      {children}
+    </AppProviders>
   );
 }
