@@ -13,12 +13,12 @@ const docsUrl =
   "https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app";
 
 type PageProps = Readonly<{
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 }>;
 
 export default async function Home({ params }: PageProps) {
-  const resolvedParams = await Promise.resolve(params);
-  const locale = resolvedParams.locale as Locale;
+  const { locale: requestedLocale } = await params;
+  const locale = requestedLocale as Locale;
   setRequestLocale(locale);
   const t = await getTranslations({ locale, namespace: "Home" });
 

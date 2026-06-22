@@ -8,12 +8,12 @@ import { AppProviders } from "@/providers";
 
 type LocaleLayoutProps = Readonly<{
   children: ReactNode;
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 }>;
 
 export default async function LocaleLayout({ children, params }: LocaleLayoutProps) {
-  const resolvedParams = await Promise.resolve(params);
-  const locale = resolvedParams.locale as Locale;
+  const { locale: requestedLocale } = await params;
+  const locale = requestedLocale as Locale;
 
   if (!routing.locales.includes(locale)) {
     notFound();
