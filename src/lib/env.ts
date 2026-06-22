@@ -3,9 +3,8 @@ import { z } from "zod";
 const envSchema = z.object({
   NODE_ENV: z.enum(["development", "test", "production"]).default("development"),
   DATABASE_URL: z
-    .string({
-      required_error: "DATABASE_URL is required",
-    })
+    .string()
+    .min(1, "DATABASE_URL is required")
     .url("DATABASE_URL must be a valid URL"),
   TIME_ZONE: z.string().min(1, "TIME_ZONE cannot be empty").default("Europe/Prague"),
 });

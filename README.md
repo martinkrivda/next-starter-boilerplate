@@ -6,8 +6,8 @@ Modern Next.js 16 starter with Prisma 7 integration, pnpm, and other tools for r
 
 - Git and native build tooling
 - [nvm](https://github.com/nvm-sh/nvm) to manage Node.js versions (`.nvmrc` is included)
-- Node.js `22.20.0` (`nvm use` ensures everyone runs the same version)
-- pnpm `10.20.0` managed through [Corepack](https://nodejs.org/docs/latest-v22.x/api/corepack.html#corepack)
+- Node.js `24.15.0` (`nvm use` ensures everyone runs the same version)
+- pnpm `11.4.0` managed through [Corepack](https://nodejs.org/docs/latest-v22.x/api/corepack.html#corepack)
 - Database reachable via a PostgreSQL connection string for Prisma (`DATABASE_URL`)
 
 ## Environment setup

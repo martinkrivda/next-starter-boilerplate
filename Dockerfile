@@ -1,5 +1,5 @@
 # ---- Base image (with pnpm via Corepack) ----
-FROM node:22.20-alpine AS base
+FROM node:24.15-alpine AS base
 
 # Enable Corepack so we can use pnpm
 ENV PNPM_HOME="/pnpm"
@@ -30,7 +30,7 @@ COPY . .
 RUN pnpm build
 
 # ---- Production runtime image ----
-FROM node:22.20-alpine AS runner
+FROM node:24.15-alpine AS runner
 
 WORKDIR /app
 ENV NODE_ENV=production
